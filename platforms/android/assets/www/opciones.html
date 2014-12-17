@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionicons.min.css"/>
+
+    <!-- if using sass (run gulp sass first), then uncomment below and remove the css includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/fastclick.js"></script>
+
+    <script>
+        // wait for device api libraries to load
+        //
+        document.addEventListener("deviceready", ondeviceready, false);
+
+        // device apis are available
+        //
+        function ondeviceready() {
+            navigator.splashscreen.hide();
+            StatusBar.show();
+        }
+    </script>
+</head>
+<body ng-app="starter">
+
+<ion-pane>
+    <ion-header-bar class="bar bar-header bar-assertive">
+        <h1 class="title"><strong>APPersoneria - Opciones</strong></h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="list">
+            <!--<a class="item item-thumbnail-left" href="chat.html">
+                <img src="img/comments16.svg" alt=""/>
+                <h2>Chat</h2>
+                <p>Comunicate con nuestros asesores</p>
+            </a>-->
+            <a class="item item-thumbnail-left" href="contacto.html">
+                <img src="img/email20.svg" alt=""/>
+                <h2 class="energized"><u><strong>Nuevo Mensaje</strong></u></h2>
+                <p>Envianos un mensaje y muy pronto nos comunicaremos contigo</p>
+            </a>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="bar bar-footer bar-assertive">
+            <h1 class="title">
+                <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;"></a>
+            </h1>
+        </ion-footer-bar>
+</ion-pane>
+</body>
+</html>

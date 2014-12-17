@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionicons.min.css"/>
+
+    <!-- if using sass (run gulp sass first), then uncomment below and remove the css includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="https://rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.js" slave="http://phpacademy.co/app/public/proxy"></script>
+    <script src="js/faqs.js"></script>
+    <script>
+        document.addEventListener("deviceready", ondeviceready, false);
+
+        function ondeviceready() {
+
+        navigator.splashscreen.hide();
+        StatusBar.show();
+
+        document.addEventListener("backbutton", function(e){
+
+           if($.mobile.activePage.is('index.html')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+
+        }
+    </script>
+</head>
+<body ng-app="faq" ng-controller="faqController">
+
+<ion-pane>
+    <ion-header-bar class="bar bar-header bar-assertive">
+        <h1 class="title"><strong>APPersoneria - Preguntas frecuentes</strong></h1>
+    </ion-header-bar>
+
+    <ion-content>
+        <div>
+            <div class="" ng-repeat="faq in faqs" href="#">                
+                <div class="row">
+                    <div class="col-top">
+                        <h2 class="energized"><i class="icon ion-minus-round"></i><strong> {{ faq.question | capitalize}}</strong></h2>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-bottom">
+                        <p>{{ faq.response | capitalize | limitTo:maxLength}}</p>
+                        <span ng-show="faq.response.length > maxLength" ng-click="maxLength=faq.response.length" class="clickable">
+                            <u class="assertive"><strong>...Expandir texto</strong></u>
+                        </span>                        
+                    </div>                                       
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar class="bar bar-footer bar-assertive">
+        <h1 class="title">
+            <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;"></a>
+        </h1>
+    </ion-footer-bar>
+</ion-pane>
+</body>
+</html>
