@@ -11,7 +11,7 @@ var app = angular.module('contacto',['ionic']);
     };
 }]);
 
-app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartamentos', '$http', function($scope, dataMessages, dataDepartamentos, $http)
+app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartamentos','dataMunicipios', '$http', function($scope, dataMessages, dataDepartamentos, dataMunicipios, $http)
 {
     var base_url = 'http://apps.personeriacali.gov.co';      
 
@@ -41,10 +41,20 @@ app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartament
     $scope.getMessages = function(msg)
     {
         dataMessages.getMessages(msg.nit).then(function(terminos){
-            console.log(terminos.data);
             $scope.messages = terminos.data;
         });
     }
+
+
+    $scope.getMunicipios = function(msg){
+        dataMunicipios.getMunicipios(msg).then(function(terminos){
+            $scope.municipios = terminos.data;
+        });
+    }
+
+    dataDepartamentos.getDepartamentos().then(function(terminos){
+        $scope.departamentos = terminos.data;
+    });
 }]);
 
 app.factory('dataMessages',['$http', function($http)
@@ -63,8 +73,7 @@ app.factory('dataMessages',['$http', function($http)
     return obj;
 }]);
 
-app.factory('dataDepartamentos',['$http', function($http)
-{
+app.factory('dataDepartamentos',['$http', function($http) {
     $http.defaults.useXDomain = true;
     $http.defaults.headers.common = 'Content-Type: application/json';
 
@@ -75,6 +84,22 @@ app.factory('dataDepartamentos',['$http', function($http)
 
     obj.getDepartamentos =function(){
         return $http.get(urlService);
+    }
+    return obj;
+
+}]);
+
+app.factory('dataMunicipios',['$http', function( $http) {
+    $http.defaults.useXDomain = true;
+    $http.defaults.headers.common = 'Content-Type: application/json';
+
+    delete $http.defaults.headers.common['X-Requested-With'];
+
+    var urlService = 'http://apps.personeriacali.gov.co/api/municipios/';
+    var obj = {};
+
+    obj.getMunicipios =function(id){
+        return $http.get(urlService+id.departamento);
     }
     return obj;
 
