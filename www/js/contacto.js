@@ -93,7 +93,7 @@ app.factory('dataMunicipios',['$http', function( $http) {
 
     delete $http.defaults.headers.common['X-Requested-With'];
 
-    var urlService = 'http://apps.personeriacali.gov.co/api/municipios/';
+    var urlService = 'http://apps.personeriacali.gov.co/api/mun/';
     var obj = {};
 
     obj.getMunicipios =function(id){
