@@ -21,17 +21,39 @@
     <script>
         var app = angular.module('tutorial', ['ionic']);
     </script>
+    <script>
+        document.addEventListener("deviceready", ondeviceready, false);
+
+        function ondeviceready() {
+
+        navigator.splashscreen.hide();
+        StatusBar.show();
+
+        document.addEventListener("backbutton", function(e){
+
+           if($.mobile.activePage.is('index.html')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+
+        }
+    </script>
 
 </head>
 <body ng-app="tutorial">
 
 <ion-pane>
     <ion-header-bar class="bar bar-header bar-assertive">
-        <h1 class="title"><strong>APPersoneria - Tutorial</strong></h1>
+        <h1 class="title"><strong>Tutorial</strong></h1>
+        <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
     </ion-header-bar>
 
     <ion-content style="text-align: center">
-        <video src="http://apps.personeriacali.gov.co/img/Tutorial.mp4" controls autoplay style="width: 100%">
+        <video src="http://apps.personeriacali.gov.co/img/Tutorial.mp4" controls autoplay style="margin-top:5%; width: 100%;">
             Tu navegador no implementa el elemento <code>video</code>.
         </video>
     </ion-content>

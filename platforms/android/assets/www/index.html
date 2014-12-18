@@ -24,63 +24,57 @@
         <script src="js/fastclick.js"></script>
 
         <script>
-              // wait for device api libraries to load
-            //
             document.addEventListener("deviceready", ondeviceready, false);
 
-            // device apis are available
-            //
             function ondeviceready() {
-                navigator.splashscreen.hide();
-                StatusBar.show();
+
+            navigator.splashscreen.hide();
+            StatusBar.show();
+
+            document.addEventListener("backbutton", function(e){
+
+               if($.mobile.activePage.is('index.html')){
+                   e.preventDefault();
+                   navigator.app.exitApp();
+               }
+               else {
+                   navigator.app.backHistory()
+               }
+            }, false);
+
             }
         </script>
     </head>
     <body ng-app="starter" class="platform-android platform-cordova platform-webview">
 
         <ion-pane>
-            <ion-header-bar class="bar bar-header bar-assertive">
-                <h1 class="title"><strong>APPersoneria</strong></h1>
+            <ion-header-bar align-title="center" class="bar bar-header bar-assertive">
+                <h1 class="title"><strong >APPersoneria</strong></h1>
+                <img class="title-image" style="margin-left:5%; height:150%;" src="img/logo.png" alt=""/>
             </ion-header-bar>
 
             <ion-content>
-                <div class="row" >
-                    <div class="col">
-                        <a class="item item-icon-left" href="opciones.html">                        
-                        <h2 class="assertive"><u><strong>Contacto</strong></h2><i class="icon ion-email icon-accesory" style="font-size: 200%;"></i></u>
-                        <p>Envianos un mensaje y muy pronto nos comunicaremos contigo</p>  
+                <div>
+                    <a class="item item-thumbnail-left" href="contacto.html">
+                        <img src="img/email20.svg" alt=""/>
+                        <h2 class="energized"><u><strong>Contacto</strong></h2></u>
+                        <p>Envianos un mensaje y muy pronto nos comunicaremos contigo.</p>
                     </a>
-                    </div>                   
-                </div>
-                
-                <div class="row">
-                    <div class="col">
-                            <a class="item item-icon-left" href="faq.html">
-                                <i class="icon ion-help-circled" style="font-size: 200%;"></i>
-                                <h2 class="assertive"><u><strong>Preguntas Frecuentes</strong></h2></u>
-                                <p>Aquí podrás encontrar respuesta a tus inquietudes</p>
-                            </a>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col">
-                        <a class="item item-icon-left" href="glosario.html">
-                            <i class="icon ion-compose"></i>
-                            <h2 class="assertive"><u><strong>Glosario</strong></h2></u>
-                            <p>Definicion de terminos pocos conocidos</p>
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col">
-                        <a class="item item-icon-left" href="tutorial.html">
-                            <i class="icon ion-thumbsup" style="font-size: 200%;"></i>
-                            <h2 class="assertive"><u><strong>Tutorial</strong></h2></u>
-                            <p>Aprende como utilizar la aplicacion</p>
-                        </a>
-                    </div>
+                    <a class="item item-thumbnail-left" href="faq.html">
+                        <img src="img/faq7.svg" alt=""/>
+                        <h2 class="energized"><u><strong>Preguntas Frecuentes</strong></h2></u>
+                        <p>Aquí podrás encontrar respuesta a tus inquietudes.</p>
+                    </a>
+                    <a class="item item-thumbnail-left" href="glosario.html">
+                        <img src="img/checklist4.svg" alt=""/>
+                        <h2 class="energized"><u><strong>Glosario</strong></h2></u>
+                        <p>Definicion de terminos pocos conocidos.</p>
+                    </a>
+                    <a class="item item-thumbnail-left" href="tutorial.html">
+                        <img src="img/film51.svg" alt=""/>
+                        <h2 class="energized"><u><strong>Tutorial</strong></h2></u>
+                        <p>Aprende como utilizar la aplicacion.</p>
+                    </a>
                 </div>
             </ion-content>
         </ion-pane>

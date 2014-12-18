@@ -25,13 +25,34 @@
         <script src="js/jquery.js"></script>
         <script src="js/contacto.js"></script>
         <script src="js/fastclick.js"></script>
+        <script>
+            document.addEventListener("deviceready", ondeviceready, false);
 
+            function ondeviceready() {
+
+            navigator.splashscreen.hide();
+            StatusBar.show();
+
+            document.addEventListener("backbutton", function(e){
+
+               if($.mobile.activePage.is('index.html')){
+                   e.preventDefault();
+                   navigator.app.exitApp();
+               }
+               else {
+                   navigator.app.backHistory()
+               }
+            }, false);
+
+            }
+        </script>
     </head>
     <body ng-app="contacto" ng-controller="contactoController">
 
         <ion-pane>
             <ion-header-bar class="bar bar-header bar-assertive">
-                <h1 class="title"><strong>APPersoneria - Contacto</strong></h1>
+                <h1 class="title"><strong class="title">Contacto</strong></h1>
+                <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
             </ion-header-bar>
 
             <ion-content>
@@ -56,44 +77,15 @@
                         </label>
                         <label class="item item-input item-select">
                             <span class="input-label">Departamento<strong class="assertive">*</strong>:</span>
-                            <select ng-model="msg.departamento" required>
-                                <option selected value="Amazonas">Amazonas</option>
-                                <option value="Antioquia">Antioquia</option>
-                                <option value="Arauca">Arauca</option>
-                                <option value="Atlantico">Atlantico</option>
-                                <option value="Bolivar">Bolivar</option>
-                                <option value="Boyaca">Boyaca</option>
-                                <option value="Caldas">Caldas</option>
-                                <option value="Caqueta">Caqueta</option>
-                                <option value="Casanare">Casanare</option>
-                                <option value="Cauca">Cauca</option>
-                                <option value="Cesar">Cesar</option>
-                                <option value="Choco">Choco</option>
-                                <option value="Cordoba">Cordoba</option>
-                                <option value="Cundinamarca">Cundinamarca</option>
-                                <option value="Guania">Guania</option>
-                                <option value="Guajira">Guajira</option>
-                                <option value="Guaviare">Guaviare</option>
-                                <option value="Huila">Huila</option>
-                                <option value="Magdalena">Magdalena</option>
-                                <option value="Meta">Meta</option>
-                                <option value="N Santander">N Santander</option>
-                                <option value="Narino">Nariño</option>
-                                <option value="Putumayo">Putumayo</option>
-                                <option value="Quindio">Quindio</option>
-                                <option value="Risaralda">Risaralda</option>
-                                <option value="San Andres">San Andres</option>
-                                <option value="Santander">Santander</option>
-                                <option value="Sucre">Sucre</option>
-                                <option value="Tolima">Tolima</option>
-                                <option value="Valle del Cauca">Valle del Cauca</option>
-                                <option value="Vaupes">Vaupes</option>
-                                <option value="Vichada">Vichada</option>
+                            <select ng-model="msg.departamento" data-ng-change="getMunicipios(msg)" required>
+                                <option ng-repeat="dpto in departamentos" value="{{dpto.id}}">{{dpto.nombre}}</option>
                             </select>
                         </label>
-                        <label class="item item-input">
+                        <label class="item item-input item-select">
                             <span class="input-label">Municipio<strong class="assertive">*</strong>:</span>
-                            <input type="text" ng-model="msg.municipio" required>
+                            <select ng-model="msg.municipio_id"required>
+                                <option ng-repeat="mun in municipios" value="{{mun.id}}">{{mun.nombre}}</option>
+                            </select>
                         </label>
                         <label class="item item-input">
                             <span class="input-label">Email<strong class="assertive">*</strong>:</span>
@@ -103,6 +95,35 @@
                             <span class="input-label">Tel/Cel<strong class="assertive">*</strong>:</span>
                             <input type="tel" ng-model="msg.phone" minlength="7" maxlength="10">
                         </label>
+<!--                         <label class="item item-input item-select">
+                                <div class="input-label">
+                                    Tipo:
+                                </div>
+                                <select ng-model="msg.message_type_id" required>
+                                    <option selected value="1">Consulta</option>
+                                    <option value="2">Petion</option>
+                                    <option value="3">Reclamo</option>
+                                    <option value="4">Otro</option>
+                                </select>
+                            </label>
+                        <label class="item item-input item-select">
+                            <div class="input-label">
+                                Categoria:
+                            </div>
+                            <select ng-model="msg.message_category_id" required>
+                                <option selected value="1">Derechos Humanos</option>
+                                <option value="2">Servicios Publicos</option>
+                                <option value="3">Conflicto Armado</option>
+                                <option value="4">Medio Ambiente</option>
+                                <option value="5">Conducta funcionarios publicos</option>
+                                <option value="6">Derechos fundamentales</option>
+                                <option value="7">Participacion ciudadana</option>
+                                <option value="8">Victimas</option>
+                                <option value="9">Discriminacion</option>
+                                <option value="10">Corrupcion</option>
+                                <option value="11">Otra</option>
+                            </select>
+                        </label> -->
                         <label class="item item-input">
                             <span class="input-label">Mensaje<strong class="assertive">*</strong>:</span>
                             <textarea ng-model="msg.message" id="message" cols="30" rows="14" required placeholder="Máximo 200 caracteres..." minlength="0" maxlength="200"></textarea>

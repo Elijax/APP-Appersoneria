@@ -11,14 +11,15 @@ var app = angular.module('contacto',['ionic']);
     };
 }]);
 
-app.controller('contactoController', ['$scope', 'dataMessages','$http', function($scope, dataMessages, $http)
+app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartamentos','dataMunicipios', '$http', function($scope, dataMessages, dataDepartamentos, dataMunicipios, $http)
 {
     $scope.addMessage = function(msg) {
         return $http({
-            url:'http://apps.personeriacali.gov.co/create/message',
+            url: 'http://apps.personeriacali.gov.co/create/message',
             method:'POST',
             data: $.param(msg),
-            headers: {'Content-Type': 'application/json'}
+            dataType:'json',
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
         }).success(function(data)
         {
             if(data.status =='200')
@@ -31,17 +32,27 @@ app.controller('contactoController', ['$scope', 'dataMessages','$http', function
             }
         }).error(function()
         {
-            alert('Hubo un error al enviar el mensaje, verifica los datos');
+            alert('El mensaje no se envió');
         });
     };
 
     $scope.getMessages = function(msg)
     {
         dataMessages.getMessages(msg.nit).then(function(terminos){
-            console.log(terminos.data);
             $scope.messages = terminos.data;
         });
     }
+
+
+    $scope.getMunicipios = function(msg){
+        dataMunicipios.getMunicipios(msg).then(function(terminos){
+            $scope.municipios = terminos.data;
+        });
+    }
+
+    dataDepartamentos.getDepartamentos().then(function(terminos){
+        $scope.departamentos = terminos.data;
+    });
 }]);
 
 app.factory('dataMessages',['$http', function($http)
@@ -58,6 +69,38 @@ app.factory('dataMessages',['$http', function($http)
         return $http.get(urlService+nit);
     }
     return obj;
+}]);
+
+app.factory('dataDepartamentos',['$http', function($http) {
+    $http.defaults.useXDomain = true;
+    $http.defaults.headers.common = 'Content-Type: application/json';
+
+    delete $http.defaults.headers.common['X-Requested-With'];
+
+    var urlService = 'http://apps.personeriacali.gov.co/api/departamentos';
+    var obj = {};
+
+    obj.getDepartamentos =function(){
+        return $http.get(urlService);
+    }
+    return obj;
+
+}]);
+
+app.factory('dataMunicipios',['$http', function( $http) {
+    $http.defaults.useXDomain = true;
+    $http.defaults.headers.common = 'Content-Type: application/json';
+
+    delete $http.defaults.headers.common['X-Requested-With'];
+
+    var urlService = 'http://apps.personeriacali.gov.co/api/municipios/';
+    var obj = {};
+
+    obj.getMunicipios =function(id){
+        return $http.get(urlService+id.departamento);
+    }
+    return obj;
+
 }]);
 
 //filtro para poner la primera letra en mayúscula

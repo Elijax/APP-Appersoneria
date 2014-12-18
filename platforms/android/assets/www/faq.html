@@ -22,17 +22,39 @@
     <!-- your app's js -->
     <script src="https://rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.js" slave="http://phpacademy.co/app/public/proxy"></script>
     <script src="js/faqs.js"></script>
+    <script>
+        document.addEventListener("deviceready", ondeviceready, false);
+
+        function ondeviceready() {
+
+        navigator.splashscreen.hide();
+        StatusBar.show();
+
+        document.addEventListener("backbutton", function(e){
+
+           if($.mobile.activePage.is('index.html')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+
+        }
+    </script>
 </head>
 <body ng-app="faq" ng-controller="faqController">
 
 <ion-pane>
     <ion-header-bar class="bar bar-header bar-assertive">
-        <h1 class="title"><strong>APPersoneria - Preguntas frecuentes</strong></h1>
+        <h1 class="title"><strong class="title">Preguntas frecuentes</strong></h1>
+        <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
     </ion-header-bar>
 
     <ion-content>
         <div>
-            <div class="item item-thumbnai-left" ng-repeat="faq in faqs" href="#">                
+            <div class="" ng-repeat="faq in faqs" href="#">                
                 <div class="row">
                     <div class="col-top">
                         <h2 class="energized"><i class="icon ion-minus-round"></i><strong> {{ faq.question | capitalize}}</strong></h2>
