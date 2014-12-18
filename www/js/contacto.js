@@ -13,11 +13,9 @@ var app = angular.module('contacto',['ionic']);
 
 app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartamentos','dataMunicipios', '$http', function($scope, dataMessages, dataDepartamentos, dataMunicipios, $http)
 {
-    var base_url = 'http://apps.personeriacali.gov.co';      
-
     $scope.addMessage = function(msg) {
         return $http({
-            url: base_url+'/create/message',
+            url: 'http://apps.personeriacali.gov.co/create/message',
             method:'POST',
             data: $.param(msg),
             dataType:'json',
