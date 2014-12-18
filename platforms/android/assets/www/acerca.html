@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/ionicons.min.css"/>
+
+    <!-- if using sass (run gulp sass first), then uncomment below and remove the css includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="https://rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.js" slave="http://phpacademy.co/app/public/proxy"></script>
+    <script src="js/faqs.js"></script>
+    <script>
+        document.addEventListener("deviceready", ondeviceready, false);
+
+        function ondeviceready() {
+
+        navigator.splashscreen.hide();
+        StatusBar.show();
+
+        document.addEventListener("backbutton", function(e){
+
+           if($.mobile.activePage.is('index.html')){
+               e.preventDefault();
+               navigator.app.exitApp();
+           }
+           else {
+               navigator.app.backHistory()
+           }
+        }, false);
+
+        }
+    </script>
+</head>
+<body ng-app="faq" ng-controller="faqController">
+
+<ion-pane>
+    <ion-header-bar class="bar bar-header bar-assertive">
+        <h1 class="title"><strong class="title">Acerca de</strong></h1>
+        <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="card">
+          <div class="item item-text-wrap">
+              <h1><strong>APPersoneria Version 1.0</strong></h1>
+
+                <p>Apliación desarrollada por el grupo APPoyarte, en la maratón APPuesta social, organizada por el ministerio de Tecnología y Comunicaciones de Colombia.
+                <br>
+                2014
+                </p>
+              <img src="img/Mintic.png" style="width:35%; height:50%; " alt="">
+              <img src="img/appuesta.png" style="width:20%; height:1%; " alt="">
+              <img src="img/Fenalper.png" style="width:35%; height:50%; " alt="">    
+          </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar class="bar bar-footer bar-assertive">
+        <h1 class="title">
+            <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;"></a>
+        </h1>
+    </ion-footer-bar>
+</ion-pane>
+</body>
+</html>
