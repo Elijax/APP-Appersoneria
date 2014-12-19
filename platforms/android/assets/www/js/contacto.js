@@ -25,6 +25,7 @@ app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartament
             if(data.status =='200')
             {
                 alert('El Mensaje fue enviado con exito');
+                window.location.replace("index.html");
             }
             else
             {
