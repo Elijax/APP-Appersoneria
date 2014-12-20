@@ -1,4 +1,11 @@
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes.dex : \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\BuildConfig.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\CordovaApp.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\R$attr.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\R$drawable.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\R$string.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\R$xml.class \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\app\APPersoneria\R.class \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\ionicframework\appersoneria731340\BuildConfig.class \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\ionicframework\appersoneria731340\CordovaApp.class \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\ant-build\classes\com\ionicframework\appersoneria731340\R$attr.class \

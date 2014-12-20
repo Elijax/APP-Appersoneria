@@ -80,7 +80,7 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\p
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\ionic.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\logo.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\logocali.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\Mintic.jpg \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\Mintic.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\Tuto1.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\Tuto2.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\platforms\android\assets\www\img\Tuto3.png \
