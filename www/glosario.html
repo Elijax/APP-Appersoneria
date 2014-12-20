@@ -62,10 +62,11 @@
                     </div>
                     <div class="row">
                         <div class="col-bottom">
-                            <p>{{ termino.description | capitalize | limitTo:maxLength}}</p>
-                            <span ng-show="termino.description.length > maxLength" ng-click="maxLength=termino.description.length" class="clickable">
-                                <u class="assertive"><small>Expandir texto...</small></u>
-                            </span>                            
+                            <p>{{ termino.description | capitalize | limitTo:maxLength}}
+                                <span ng-show="termino.description.length > maxLength" ng-click="maxLength=termino.description.length" class="clickable">
+                                    <strong class="dark">...Expandir texto</strong>
+                                </span>    
+                            </p>   
                         </div>
                     </div>                                     
                 </div>

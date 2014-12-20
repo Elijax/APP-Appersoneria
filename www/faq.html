@@ -63,10 +63,12 @@
                 
                 <div class="row">
                     <div class="col-bottom">
-                        <p>{{ faq.response | capitalize | limitTo:maxLength}}</p>
-                        <span ng-show="faq.response.length > maxLength" ng-click="maxLength=faq.response.length" class="clickable">
-                            <u class="assertive"><strong>...Expandir texto</strong></u>
-                        </span>                        
+                        <p>{{ faq.response | capitalize | limitTo:maxLength}}
+                            <span ng-show="faq.response.length > maxLength" ng-click="maxLength=faq.response.length" class="clickable">
+                                <strong class="dark">...Expandir texto</strong>
+                            </span>  
+                        </p>
+                                              
                     </div>                                       
                 </div>
             </div>

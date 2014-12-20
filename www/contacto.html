@@ -129,11 +129,18 @@
                             <span class="input-label">Mensaje<strong class="assertive">*</strong>:</span>
                             <textarea ng-model="msg.message" id="message" cols="30" rows="14" required placeholder="Máximo 500 caracteres..." minlength="0" maxlength="500"></textarea>
                         </label>
-                        <button type="submit" ng-click="addMessage(msg)" class="button button-block button-positive">
-                            Enviar Mensaje
+                        <br>
+                        <button type="submit" ng-click="addMessage(msg)" class="button button-full button-outline button-assertive">
+                            Enviar Mensaje <i class="ion-paper-airplane"></i>
                         </button>
                     </div>
                 </form>
+                <div class="card">
+                  <div style="text-align:center;"class="item item-text-wrap">
+                    <h1 class="energized">Atención!</h1>
+                    <p>Si su mensaje requiere ser respondido, es posible que el email de respuesta ingrese en la bandeja de correo no deseado, si envió algun mensaje y no ha recibido respuesta, por favor verifique esa bandeja.</p>
+                  </div>
+                </div>
             </ion-content>
             <ion-footer-bar class="bar bar-footer bar-assertive">
               <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
