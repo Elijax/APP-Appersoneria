@@ -28,6 +28,7 @@
 
             function ondeviceready() {
 
+                if (parseFloat(device.version) >= 7.0) { document.body.style.marginTop = "20px"; }
             navigator.splashscreen.hide();
             StatusBar.show();
 
