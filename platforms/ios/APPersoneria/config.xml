@@ -21,18 +21,11 @@
     </feature>
     <name>APPersoneria</name>
     <description>
-        Una aplicación desarrollada para FENALPER.
+        A sample Apache Cordova application that responds to the deviceready event.
     </description>
-    <author email="moisesvalera.92@hotmail.com" href="https://www.facebook.com/Appoyarte">
-      Grupo APPoyarte
+    <author email="dev@cordova.apache.org" href="http://cordova.io">
+        Apache Cordova Team
     </author>
     <content src="index.html" />
     <access origin="*" />
-    <preference name="webviewbounce" value="false" />
-    <preference name="UIWebViewBounce" value="false" />
-    <preference name="DisallowOverscroll" value="true" />
-    <preference name="BackupWebStorage" value="none" />
-    <preference name="SplashScreen" value="screen" />
-    <preference name="SplashScreenDelay" value="5000" />
-    <preference name="Orientation" value="portrait" />
 </widget>
