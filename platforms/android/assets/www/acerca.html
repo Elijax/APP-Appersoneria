@@ -26,7 +26,7 @@
         document.addEventListener("deviceready", ondeviceready, false);
 
         function ondeviceready() {
-
+            if (parseFloat(device.version) >= 7.0) { document.body.style.marginTop = "20px"; }
         navigator.splashscreen.hide();
         StatusBar.show();
 
@@ -55,20 +55,25 @@
     <ion-content>
         <div class="card">
           <div class="item item-text-wrap">
-              <h1 style="text-align: center;"><strong>APPersoneria Version 1.0</strong></h1>
-                <p style="text-align: center;">Aplicación desarrollada por el grupo <a href="http://www.facebook.com/Appoyarte"><strong>APPoyarte</strong></a> conformado por: <a href="http://www.facebook.com/MoisesEliasValera">Moises Elias Valera</a>, <a href="https://www.facebook.com/jiovanny.villamil">Jiovanny Villamil</a> y <a href="https://www.facebook.com/PeyoDaza">Pedro Jose Daza</a>, y <a href="https://www.facebook.com/angel.kurten"> Javier Gutierrez</a> como colaborador, en la maratón "APPuesta social", organizada por el ministerio de Tecnología y Comunicaciones de Colombia, para el uso institucional de <strong>FENALPER</strong>, Federación Nacional de Personerias.
-                <br>
-                </p>
-                <p style="text-align: center;">
-                Bogotá - Colombia, 2014
-                </p>
-                <br>
-                <p style="text-align: center;">APPersoneria es un medio directo de comunicación con asesores de personerías de los diferentes municipios de Colombia, que busca atender y apoyar a la ciudadanía cuando necesiten orientación e información para saber que hacer frente a cualquier hecho que genere conflicto o que impacte de cualquier manera los derechos humanos de acuerdo a los criterios establecidos por la constitución colombiana.</p>
-                <div style="text-align:center;">
-                  <img src="img/Mintic.png" style="width:170px;" alt="">
-                  <img src="img/Fenalper.png" style="width:150px; margin-bottom:5%" alt="">
-                  <img src="img/logocali.png" style="width:150px;" alt="">
-                </div>              
+            <div style="text-align:center;">
+                <h1><strong>APPersoneria Version 1.0</strong></h1>
+                  <p><strong>Personeria de Cali</strong></p>
+                  <p>©2014 - Derechos reservados</p>
+                  <strong><p>Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos</p></strong>
+                  <br>
+                  <p>Aplicación desarrollada por el grupo <a href="http://www.facebook.com/Appoyarte"><strong>APPoyarte</strong></a> conformado por: <a href="http://www.facebook.com/MoisesEliasValera">Moises Elias Valera</a>, <a href="https://www.facebook.com/jiovanny.villamil">Jiovanny Villamil</a> y <a href="https://www.facebook.com/PeyoDaza">Pedro Jose Daza</a>, en la maratón "APPuesta social", organizada por el Ministerio de Tecnologías de la Información y las Comunicaciones, para el uso institucional de <strong>FENALPER</strong>, Federación Nacional de Personerias.
+                  <br>
+                  </p>
+                  <br>
+                  <p><strong>APPersoneria</strong> es un medio directo de comunicación con los personeros de los diferentes municipios de Colombia, que busca atender y apoyar a la ciudadanía cuando necesiten orientación e información para saber que hacer frente a cualquier hecho que genere conflicto o que impacte de cualquier manera los derechos humanos de acuerdo a los criterios establecidos por la constitución colombiana.</p>
+                  <br>
+                  <div style="text-align:center;">
+                    <p><u><strong>Entidades relacionadas:</strong></u></p>
+                    <img src="img/logocali.png" style="width: 50%;height: auto;" alt="">
+                    <img src="img/Mintic.png" style="width: 50%;height: auto;" alt="">
+                    <img src="img/Fenalper.png" style="width: 50%;height: auto;" alt="">                    
+                  </div>                  
+            </div>              
           </div>
         </div>
     </ion-content>
