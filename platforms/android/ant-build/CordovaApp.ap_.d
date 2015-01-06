@@ -11,9 +11,7 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-land-xhdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-land-xhdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-ldpi\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-ldpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-mdpi\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-mdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-port-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-port-hdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-port-ldpi\icon.png \
@@ -38,9 +36,7 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-land-xhdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-land-xhdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-ldpi\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-ldpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-mdpi\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-mdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-port-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-port-hdpi\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-port-ldpi\icon.png \
