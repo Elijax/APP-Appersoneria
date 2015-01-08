@@ -77,7 +77,7 @@
                             <input type="text" ng-model="msg.direction">
                         </label>
                         <label class="item item-input item-select">
-                            <span class="input-label">Depto<strong class="assertive">*</strong>:</span>
+                            <span class="input-label">Depto.<strong class="assertive">*</strong>:</span>
                             <select ng-model="msg.departamento" data-ng-change="getMunicipios(msg)" required>
                                 <option ng-repeat="dpto in departamentos" value="{{dpto.id}}">{{dpto.nombre}}</option>
                             </select>
@@ -93,7 +93,7 @@
                             <input type="email" ng-model="msg.email" placeholder="ejemplo@ejemplo.com">
                         </label>
                         <label class="item item-input">
-                            <span class="input-label">Tel/Cel<strong class="assertive">*</strong>:</span>
+                            <span class="input-label">Tel./Cel.<strong class="assertive">*</strong>:</span>
                             <input type="tel" ng-model="msg.phone" minlength="7" maxlength="10">
                         </label>
 <!--                         <label class="item item-input item-select">
