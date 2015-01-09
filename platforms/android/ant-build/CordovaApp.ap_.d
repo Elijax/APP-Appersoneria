@@ -75,6 +75,7 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\film51.svg \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\ionic.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\logo.png \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\logo2.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\logocali.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\Mintic.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\img\Tuto1.png \

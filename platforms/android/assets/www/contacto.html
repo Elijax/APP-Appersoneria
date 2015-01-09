@@ -1,4 +1,4 @@
-<!doctype html>
+<!doctype HTML>
 <html>
     <head>
         <meta charset="utf-8">
@@ -50,12 +50,11 @@
     <body ng-app="contacto" ng-controller="contactoController">
 
         <ion-pane>
-            <ion-header-bar class="bar bar-header bar-assertive">
-                <a href="index.html" class="icon ion-reply-all" style="font-size: 200%; color:white;"></a>
-                <h1 class="title"><strong class="title">Contacto</strong></h1>
+            <ion-header-bar class="bar bar-header bar-assertive">                
             </ion-header-bar>
-
             <ion-content>
+                <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;margin-left:15px;margin-top:25px;"></a>
+                <h1 style="text-align: center;"><strong>Contacto:</strong></h1>
                 <div class="card">
                   <div style="text-align:center;"class="item item-text-wrap">
                     <p>Los campos marcados con asterisco <strong class="assertive">*</strong> son obligatorios.</p>
@@ -66,14 +65,14 @@
                     <div class="list" ng-submit="addMessage()">
                         <label class="item item-input">
                             <span class="input-label">Nombre Completo<strong class="assertive">*</strong>:</span>
-                            <input type="text" ng-model="msg.name" required minlength="20" maxlength="70" >
+                            <input type="text" ng-model="msg.name" pattern=".{20,}" required title="Ingrese 20 caracteres mínimo" maxlength="70">
                         </label>
                         <label class="item item-input">
-                            <span class="input-label">Cedula<strong class="assertive">*</strong>:</span>
-                            <input type="tel" ng-model="msg.nit" required minlength="10" maxlength="12">
+                            <span class="input-label">Cédula<strong class="assertive">*</strong>:</span>
+                            <input type="tel" ng-model="msg.nit" pattern=".{10,}" required title="Ingrese 10 caracteres mínimo" maxlength="12">
                         </label>
                         <label class="item item-input">
-                            <span class="input-label">Direccion:</span>
+                            <span class="input-label">Dirección:</span>
                             <input type="text" ng-model="msg.direction">
                         </label>
                         <label class="item item-input item-select">
@@ -96,38 +95,9 @@
                             <span class="input-label">Tel./Cel.<strong class="assertive">*</strong>:</span>
                             <input type="tel" ng-model="msg.phone" minlength="7" maxlength="10">
                         </label>
-<!--                         <label class="item item-input item-select">
-                                <div class="input-label">
-                                    Tipo:
-                                </div>
-                                <select ng-model="msg.message_type_id" required>
-                                    <option selected value="1">Consulta</option>
-                                    <option value="2">Petion</option>
-                                    <option value="3">Reclamo</option>
-                                    <option value="4">Otro</option>
-                                </select>
-                            </label>
-                        <label class="item item-input item-select">
-                            <div class="input-label">
-                                Categoria:
-                            </div>
-                            <select ng-model="msg.message_category_id" required>
-                                <option selected value="1">Derechos Humanos</option>
-                                <option value="2">Servicios Publicos</option>
-                                <option value="3">Conflicto Armado</option>
-                                <option value="4">Medio Ambiente</option>
-                                <option value="5">Conducta funcionarios publicos</option>
-                                <option value="6">Derechos fundamentales</option>
-                                <option value="7">Participacion ciudadana</option>
-                                <option value="8">Victimas</option>
-                                <option value="9">Discriminacion</option>
-                                <option value="10">Corrupcion</option>
-                                <option value="11">Otra</option>
-                            </select>
-                        </label> -->
                         <label class="item item-input">
                             <span class="input-label">Mensaje<strong class="assertive">*</strong>:</span>
-                            <textarea ng-model="msg.message" id="message" cols="30" rows="14" required placeholder="Mínimo 50 caracteres, y máximo 500 caracteres..." minlength="50" maxlength="500"></textarea>
+                            <textarea ng-model="msg.message" id="message" cols="30" rows="14" required pattern=".{50,}" required title="Ingrese 50 caracteres mínimo" placeholder="Mínimo 50 caracteres, y máximo 500 caracteres..." maxlength="500"></textarea>
                         </label>
                         <br>
                         <button type="submit" ng-click="addMessage(msg)" class="button button-full button-outline button-assertive">
@@ -141,11 +111,8 @@
                     <p>Si su mensaje requiere ser respondido, es posible que el email de respuesta ingrese en la bandeja de correo no deseado, si envió algun mensaje y no ha recibido respuesta, por favor verifique esa bandeja.</p>
                   </div>
                 </div>
+                <img class="title-image" src="img/logo.png" alt="" style="width:100%;"/>
             </ion-content>
-            <ion-footer-bar class="bar bar-footer bar-assertive">
-              <img class="title-image" style="margin-left:5%; height:150%;"src="img/logo.png" alt=""/>
-              <h1 class="title"><strong>APPersoneria</strong></h1>
-            </ion-footer-bar>
         </ion-pane>
     </body>
 </html>
