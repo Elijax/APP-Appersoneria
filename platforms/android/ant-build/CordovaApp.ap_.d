@@ -1,6 +1,6 @@
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\CordovaApp.ap_ \
  : C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable\screen.png \
+C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable\screen5.jpg \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-land-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\drawable-land-hdpi\screen.png \
@@ -25,7 +25,6 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\values\strings.xml \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\res\xml\config.xml \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable\icon.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable\screen.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-land-hdpi\icon.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\res\drawable-land-hdpi\screen.png \
@@ -61,7 +60,6 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\js \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\lib \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\plugins \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\css\angular-carousel.css \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\css\demo.css \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\css\ionicons.min.css \
@@ -167,10 +165,4 @@ C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\A
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\Connection.js \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\plugins\org.apache.cordova.network-information\www\network.js \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens\android \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens\android\screen-hdpi-portrait.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens\android\screen-ldpi-portrait.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens\android\screen-mdpi-portrait.png \
-C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\assets\www\res\screens\android\screen-xhdpi-portrait.png \
 C:\wamp\www\Appersoneria\appersoneria Kurten\APPersoneria-APP\APP-Appersoneria\APP-Appersoneria\platforms\android\ant-build\AndroidManifest.xml \

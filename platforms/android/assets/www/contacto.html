@@ -48,71 +48,196 @@
         </script>
     </head>
     <body ng-app="contacto" ng-controller="contactoController">
-
-        <ion-pane>
-            <ion-header-bar class="bar bar-header bar-assertive">                
-            </ion-header-bar>
-            <ion-content>
-                <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;margin-left:15px;margin-top:25px;"></a>
-                <h1 style="text-align: center;"><strong>Contacto:</strong></h1>
-                <div class="card">
-                  <div style="text-align:center;"class="item item-text-wrap">
-                    <p>Los campos marcados con asterisco <strong class="assertive">*</strong> son obligatorios.</p>
-                    <p>Si al seleccionar un departamento, su municipio no aparece listado, es porque en la plataforma de atención ese municipio no cuenta con personero disponible...</p>
-                  </div>
+      <ion-pane>
+          <ion-header-bar class="bar bar-header bar-assertive">                
+          </ion-header-bar>
+          <ion-content>
+              <h1 style="text-align: center;"><strong>Contacto:</strong></h1>
+              <div class="card">
+                <div style="text-align:center;"class="item item-text-wrap">
+                  <p>Los campos marcados con asterisco <strong class="assertive">*</strong> son obligatorios.</p>
+                  <p>Si su departamento o municipio no aparecen listados, es porque en la plataforma de atención ese departamento o municipio no cuenta con personero disponible.</p>                    
                 </div>
-                <form>
-                    <div class="list" ng-submit="addMessage()">
-                        <label class="item item-input">
-                            <span class="input-label">Nombre Completo<strong class="assertive">*</strong>:</span>
-                            <input type="text" ng-model="msg.name" pattern=".{20,}" required title="Ingrese 20 caracteres mínimo" maxlength="70">
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Cédula<strong class="assertive">*</strong>:</span>
-                            <input type="tel" ng-model="msg.nit" pattern=".{10,}" required title="Ingrese 10 caracteres mínimo" maxlength="12">
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Dirección:</span>
-                            <input type="text" ng-model="msg.direction">
-                        </label>
-                        <label class="item item-input item-select">
-                            <span class="input-label">Depto.<strong class="assertive">*</strong>:</span>
-                            <select ng-model="msg.departamento" data-ng-change="getMunicipios(msg)" required>
-                                <option ng-repeat="dpto in departamentos" value="{{dpto.id}}">{{dpto.nombre}}</option>
-                            </select>
-                        </label>
-                        <label class="item item-input item-select">
-                            <span class="input-label">Municipio<strong class="assertive">*</strong>:</span>
-                            <select ng-model="msg.municipio_id"required>
-                                <option ng-repeat="mun in municipios" value="{{mun.id}}">{{mun.nombre}}</option>
-                            </select>
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Email<strong class="assertive">*</strong>:</span>
-                            <input type="email" ng-model="msg.email" placeholder="ejemplo@ejemplo.com">
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Tel./Cel.<strong class="assertive">*</strong>:</span>
-                            <input type="tel" ng-model="msg.phone" minlength="7" maxlength="10">
-                        </label>
-                        <label class="item item-input">
-                            <span class="input-label">Mensaje<strong class="assertive">*</strong>:</span>
-                            <textarea ng-model="msg.message" id="message" cols="30" rows="14" required pattern=".{50,}" required title="Ingrese 50 caracteres mínimo" placeholder="Mínimo 50 caracteres, y máximo 500 caracteres..." maxlength="500"></textarea>
-                        </label>
-                        <br>
-                        <button type="submit" ng-click="addMessage(msg)" class="button button-full button-outline button-assertive">
-                            Enviar Mensaje <i class="ion-paper-airplane"></i>
+              </div>
+              <form name="myForm" ng-submit="addMessage()" novalidate>
+                <div id="listValidation" class="card" style="text-align:center;">
+                        <span ng-show="myForm.name.$pristine || myForm.nit.$pristine || myForm.muni.$pristine || myForm.depa.$pristine || myForm.email.$pristine || myForm.tel.$pristine || myForm.msge.$pristine">
+                          <span id="formInit" class="item item-icon-left energized">
+                               <i class="icon ion-information-circled"></i>
+                               <small>Para poder enviar un mensaje satisfactoriamente, por favor verifique que <strong>todos</strong> los campos obligatorios hayan sido correctamente diligenciados. Una vez hecho esto, se habilitará el boton de envío....</small>
+                          </span>
+                        </span>
+                        <span id="nameValidation" class="item item-icon-left assertive"  
+                            ng-show="myForm.name.$dirty && myForm.name.$invalid">
+                            <i class="icon ion-close-circled"></i>
+                            <small class="error" 
+                                ng-show="myForm.name.$error.required">
+                                El campo "Nombre completo" es obligatorio...
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.name.$error.minlength">
+                                * El campo "Nombre completo" debe tener al menos 7 caractéres...
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.name.$error.maxlength">
+                                * El campo "Nombre completo" no puede tener mas de 50 caractéres...
+                            </small>                                
+                        </span>
+                        <span id="nitValidation" class="item item-icon-left assertive"
+                            ng-show="myForm.nit.$dirty && myForm.nit.$invalid">
+                            <i class="icon ion-close-circled"></i>
+                            <small class="error" 
+                                ng-show="myForm.nit.$error.required">
+                                El campo "Cédula" es obligatorio
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.nit.$error.minlength">
+                                * El campo "Cédula" debe tener al menos 7 caractéres...
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.nit.$error.maxlength">
+                                * El campo "Cédula" no puede tener mas de 10 caractéres...
+                            </small>
+                        </span>                            
+                        <span id="depaValidation"  class="item item-icon-left assertive"
+                            ng-show="myForm.depa.$dirty && myForm.depa.$invalid">
+                            <i class="icon ion-close-circled"></i>
+                            <small class="error" 
+                                ng-show="myForm.depa.$error.required">
+                                * El departamento es obligatorio...
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.depa.$error.minlength">
+                                * El numero de cédula debe tener al menos 10 caractéres...
+                            </small>
+                        </span>                            
+                        <span id="muniValidation"  class="item item-icon-left assertive"
+                            ng-show="myForm.muni.$dirty && myForm.muni.$invalid">
+                            <i class="icon ion-close-circled"></i>
+                            <small class="error" 
+                                ng-show="myForm.muni.$error.required">
+                                * El municipio es obligatorio...
+                            </small>
+                            <small class="error" 
+                                ng-show="myForm.muni.$error.minlength">
+                                * El municipio es obligatorio...
+                            </small>
+                        </span>
+                        <span id="emailValidation" class="item item-icon-left assertive"
+                            ng-show="myForm.email.$dirty && myForm.email.$invalid">
+                              <i class="icon ion-close-circled"></i>
+                              <small class="error" 
+                                     ng-show="myForm.email.$error.required">
+                                     * El campo "Email" es obligatorio.
+                              </small>
+                              <small class="error" 
+                                     ng-show="myForm.email.$error.minlength">
+                                      * El campo "Email" debe tener al menos 10 caractéres...
+                              </small>
+                              <small class="error" 
+                                     ng-show="myForm.email.$error.email">
+                                     * El valor ingresado en el campo "Email" no es valido, por favor verifiquelo...
+                              </small>
+                              <small class="error" 
+                                     ng-show="myForm.email.$error.maxlength">
+                                     * El campo "Email" no puede tener mas de 40 caractéres...
+                              </small>
+                        </span>
+                        <span id="telValidation" class="item item-icon-left assertive" 
+                            ng-show="myForm.tel.$dirty && myForm.tel.$invalid">
+                            <i class="icon ion-close-circled"></i>                                
+                              <small class="error" 
+                                     ng-show="myForm.tel.$error.required">
+                                     * El campo "Tel./Cel." es obligatorio...
+                              </small>
+                              <small class="error" 
+                                     ng-show="myForm.tel.$error.minlength">
+                                      * El  campo "Tel./Cel." debe tener al menos 6 caractéres...
+                              </small>
+                              <small class="error" 
+                                     ng-show="myForm.tel.$error.maxlength">
+                                     * El  campo "Tel./Cel." no puede tener mas de 12 caractéres...
+                              </small>
+                        </span>  
+                        <span id="msgeValidation" class="item item-icon-left assertive" 
+                            ng-show="myForm.msge.$dirty && myForm.msge.$invalid">
+                            <i class="icon ion-close-circled"></i>                                  
+                            <small class="error" 
+                                 ng-show="myForm.msge.$error.required">
+                                 * El campo del mensaje es obligatorio...
+                            </small>
+                            <small class="error" 
+                                 ng-show="myForm.msge.$error.minlength">
+                                  * El campo del mensaje debe tener al menos 25 caractéres...
+                            </small>
+                            <small class="error" 
+                                 ng-show="myForm.msge.$error.maxlength">
+                                 * El campo del mensaje no puede tener mas de 400 caractéres...
+                            </small>                                                               
+                        </span>                                                       
+                </div>
+                <div class="list">
+                    <label class="item item-input">
+                        <span class="input-label">Nombre Completo<strong class="assertive">*</strong>:</span>
+                        <input type="text" ng-model="msg.name" name="name" ng-minlength=7 ng-maxlength=50 max-length="70" >
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Cédula<strong class="assertive">*</strong>:</span>
+                        <input type="number" ng-model="msg.nit" name="nit" ng-minlength=7 ng-maxlength=10 max-length="12">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Dirección:</span>
+                        <input type="text" ng-model="msg.direction">
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">Depto.<strong class="assertive">*</strong>:</span>
+                        <select ng-model="msg.departamento" name="depa" data-ng-change="getMunicipios(msg)" required>
+                            <option ng-repeat="dpto in departamentos" required  value="{{dpto.id}}">{{dpto.nombre}}</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <span class="input-label">Municipio<strong class="assertive">*</strong>:</span>
+                        <select name="muni" ng-model="msg.municipio_id"required>
+                            <option ng-repeat="mun in municipios"  required value="{{mun.id}}">{{mun.nombre}}</option>
+                        </select>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Email<strong class="assertive">*</strong>:</span>
+                        <input type="email" ng-model="msg.email" name="email" placeholder="ejemplo@ejemplo.com" ng-minlength=10 ng-maxlength=40  max-length="20" required>
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Tel./Cel.<strong class="assertive">*</strong>:</span>
+                        <input type="tel" ng-model="msg.phone" name="tel" ng-minlength=7 ng-maxlength=10 max-length="10">
+                    </label>
+                    <label class="item item-input">
+                        <span class="input-label">Mensaje<strong class="assertive">*</strong>:</span>
+                        <textarea ng-model="msg.message" id="message" cols="30" rows="14" name="msge" required ng-minlength=25 ng-maxlength=400></textarea>
+                    </label>
+                    </div>                           
+                </div>
+                <span id="formSuccess" style="text-align: center;" >
+                  <span ng-show="myForm.name.$valid && myForm.nit.$valid && myForm.muni.$valid&& myForm.depa.$valid && myForm.email.$valid && myForm.tel.$valid && myForm.msge.$valid">
+                    <div class="card">
+                      <div class="item  item-icon-left balanced">
+                        <i class="icon ion-checkmark-circled"></i>
+                        <p>El formulario de contacto ha sido diligenciado correctamente, puede <strong class="balanced" >enviar</strong> su mensaje sin problemas.</p>
+                        <button type="submit"  ng-click="addMessage(msg)" class="button button-full button-outline button-balanced "> 
+                            Enviar Mensaje 
+                            <i class="ion-paper-airplane"></i>
                         </button>
-                    </div>
-                </form>
-                <div class="card">
-                  <div style="text-align:center;"class="item item-text-wrap">
-                    <h1 class="energized">Atención!</h1>
-                    <p>Si su mensaje requiere ser respondido, es posible que el email de respuesta ingrese en la bandeja de correo no deseado, si envió algun mensaje y no ha recibido respuesta, por favor verifique esa bandeja.</p>
-                  </div>
-                </div>
-                <img class="title-image" src="img/logo.png" alt="" style="width:100%;"/>
-            </ion-content>
-        </ion-pane>
+                      </div>
+                      <div class="item item-text-wrap">
+                        <h1 class="energized">Atención!</h1>
+                        <p>Si su mensaje requiere ser respondido, es posible que el email de respuesta ingrese en la <strong>bandeja de correo no deseado</strong>, si envió algun mensaje y no ha recibido respuesta, por favor verifique esa bandeja.</p>
+                      </div>
+                    </div>                                
+                  </span>                                                     
+                </span> 
+              </form>
+          </ion-content>
+          <ion-footer-bar class="bar bar-footer bar-assertive">
+            <a href="index.html" style="font-size: 200%;color:white;" class="icon ion-reply-all"></a>
+        </ion-footer-bar>
+      </ion-pane>
     </body>
-</html>
+</html> 

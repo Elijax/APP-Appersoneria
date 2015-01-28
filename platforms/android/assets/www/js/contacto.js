@@ -13,6 +13,7 @@ var app = angular.module('contacto',['ionic']);
 
 app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartamentos','dataMunicipios', '$http', function($scope, dataMessages, dataDepartamentos, dataMunicipios, $http)
 {
+    
     $scope.addMessage = function(msg) {
         return $http({
             url: 'http://apps.personeriacali.gov.co/create/message',
@@ -29,11 +30,11 @@ app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartament
             }
             else
             {
-                alert('Hubo un error al enviar el mensaje');
+                alert('Hubo un error al enviar el mensaje, por favor verifique los datos ingresados...');
             }
         }).error(function()
         {
-            alert('El mensaje no se envió');
+            alert('El mensaje no se pudo enviar por problemas de conectividad...');
         });
     };
 
@@ -54,6 +55,8 @@ app.controller('contactoController', ['$scope', 'dataMessages', 'dataDepartament
     dataDepartamentos.getDepartamentos().then(function(terminos){
         $scope.departamentos = terminos.data;
     });
+
+
 }]);
 
 app.factory('dataMessages',['$http', function($http)
@@ -78,7 +81,7 @@ app.factory('dataDepartamentos',['$http', function($http) {
 
     delete $http.defaults.headers.common['X-Requested-With'];
 
-    var urlService = 'http://apps.personeriacali.gov.co/api/departamentos';
+    var urlService = 'http://apps.personeriacali.gov.co/api/dept';
     var obj = {};
 
     obj.getDepartamentos =function(){

@@ -1,86 +1,87 @@
 <!doctype html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <title></title>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+      <title></title>
 
-    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/ionicons.min.css"/>
+      <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/ionicons.min.css"/>
 
-    <!-- if using sass (run gulp sass first), then uncomment below and remove the css includes above
-    <link href="css/ionic.app.css" rel="stylesheet">
-    -->
+      <!-- if using sass (run gulp sass first), then uncomment below and remove the css includes above
+      <link href="css/ionic.app.css" rel="stylesheet">
+      -->
 
-    <!-- ionic/angularjs js -->
-    <script src="lib/ionic/js/ionic.bundle.js"></script>
+      <!-- ionic/angularjs js -->
+      <script src="lib/ionic/js/ionic.bundle.js"></script>
 
-    <!-- cordova script (this will be a 404 during development) -->
-    <script src="cordova.js"></script>
+      <!-- cordova script (this will be a 404 during development) -->
+      <script src="cordova.js"></script>
 
-    <!-- your app's js -->
-    <script src="https://rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.js" slave="http://phpacademy.co/app/public/proxy"></script>
-    <script src="js/faqs.js"></script>
-    <script>
-        document.addEventListener("deviceready", ondeviceready, false);
+      <!-- your app's js -->
+      <script src="https://rawgit.com/jpillora/xdomain/gh-pages/dist/0.6/xdomain.js" slave="http://phpacademy.co/app/public/proxy"></script>
+      <script src="js/faqs.js"></script>
+      <script>
+          document.addEventListener("deviceready", ondeviceready, false);
 
-        function ondeviceready() {
-            if (parseFloat(device.version) >= 7.0) { document.body.style.marginTop = "20px"; }
-        navigator.splashscreen.hide();
-        StatusBar.show();
+          function ondeviceready() {
+          if (parseFloat(device.version) >= 7.0) { document.body.style.marginTop = "20px"; }
+          navigator.splashscreen.hide();
+          StatusBar.show();
 
-        document.addEventListener("backbutton", function(e){
+          document.addEventListener("backbutton", function(e){
 
-           if($.mobile.activePage.is('index.html')){
-               e.preventDefault();
-               navigator.app.exitApp();
-           }
-           else {
-               navigator.app.backHistory()
-           }
-        }, false);
+             if($.mobile.activePage.is('index.html')){
+                 e.preventDefault();
+                 navigator.app.exitApp();
+             }
+             else {
+                 navigator.app.backHistory()
+             }
+          }, false);
 
-        }
-    </script>
-</head>
-<body ng-app="faq" ng-controller="faqController">
-
-<ion-pane>
-    <ion-header-bar class="bar bar-header bar-assertive">
-    </ion-header-bar>
-    <ion-content>
-        <a href="index.html" class="icon ion-reply-all" style="font-size: 200%;margin-left:15px;"></a>
-        <h1 style="text-align: center;"><strong>Acerca de:</strong></h1>
-        <div class="card">
-          <div class="item item-text-wrap">
-            <div style="text-align:center;">
-                <h1><strong>APPersoneria Version 1.0</strong></h1>
-                  <p><strong>Personeria de Cali</strong></p>
-                  <p>©2014 - Derechos reservados</p>
-                  <strong><p>Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</p></strong>
-                  <br>
-                  <p>Aplicación desarrollada por el grupo <a href="http://www.facebook.com/Appoyarte"><strong>APPoyarte</strong></a> conformado por: <a href="http://www.facebook.com/MoisesEliasValera">Moises Elias Valera</a>, <a href="https://www.facebook.com/jiovanny.villamil">Jiovanny Villamil</a> y <a href="https://www.facebook.com/PeyoDaza">Pedro Jose Daza</a>, en la maratón "APPuesta social", organizada por el Ministerio de Tecnologías de la Información y las Comunicaciones.
-                  <br>
-                  </p>
-                  <br>
-                  <p><strong>APPersoneria</strong> es un medio directo de comunicación con los personeros de los diferentes municipios de Colombia, que busca atender y apoyar a la ciudadanía cuando necesiten orientación e información para saber que hacer frente a cualquier hecho que genere conflicto o que impacte de cualquier manera los derechos humanos de acuerdo a los criterios establecidos por la constitución colombiana.</p>
-                  <br>
-                  <div style="text-align:center;">
-                    <p><u><strong>Entidades relacionadas:</strong></u></p>
+          }
+      </script>
+  </head>
+  <body ng-app="faq" ng-controller="faqController">
+  <ion-pane>
+      <ion-header-bar class="bar bar-header bar-assertive">
+      </ion-header-bar>
+      <ion-content>
+          <h1 style="text-align: center;"><strong>Acerca de:</strong></h1>
+          <div class="card">
+            <div class="item item-text-wrap">
+              <div style="text-align:center;">
+                  <h1><strong>APPersoneria Version 1.0</strong></h1>
+                    <p><strong>Personeria de Cali</strong></p>
+                    <p>©2014 - Derechos reservados</p>
+                    <strong><p>Tenga en cuenta que esta aplicación requiere acceso a internet y puede consumir recursos de su plan de datos.</p></strong>
                     <br>
-                    <img src="img/Mintic.png" style="width: 80%;height: auto;" alt="">
+                    <p>Aplicación desarrollada por el grupo <a href="http://www.facebook.com/Appoyarte"><strong>APPoyarte</strong></a> conformado por: <a href="http://www.facebook.com/MoisesEliasValera">Moises Elias Valera</a>, <a href="https://www.facebook.com/jiovanny.villamil">Jiovanny Villamil</a> y <a href="https://www.facebook.com/PeyoDaza">Pedro Jose Daza</a>, en la maratón "APPuesta social", organizada por el Ministerio de Tecnologías de la Información y las Comunicaciones.
                     <br>
+                    </p>
                     <br>
-                    <img src="img/Fenalper.png" style="width: 50%;height: auto;" alt="">
-                    <br> 
-                    <img src="img/logocali.png" style="width: 50%;height: 90px;" alt="">                                       
-                  </div>                  
-            </div>              
+                    <p><strong>APPersoneria</strong> es un medio directo de comunicación con los personeros de los diferentes municipios de Colombia, que busca atender y apoyar a la ciudadanía cuando necesiten orientación e información para saber que hacer frente a cualquier hecho que genere conflicto o que impacte de cualquier manera los derechos humanos de acuerdo a los criterios establecidos por la constitución colombiana.</p>
+                    <br>
+                    <div style="text-align:center;">
+                      <p><u><strong>Entidades relacionadas:</strong></u></p>
+                      <br>
+                      <img src="img/Mintic.png" style="width: 80%;height: auto;" alt="">
+                      <br>
+                      <br>
+                      <img src="img/Fenalper.png" style="width: 50%;height: auto;" alt="">
+                      <br> 
+                      <img src="img/logocali.png" style="width: 50%;height: 90px;" alt="">                                       
+                    </div>                  
+              </div>              
+            </div>
           </div>
-        </div>
-        <img class="title-image" src="img/logo.png" alt="" style="width:100%;"/>
-    </ion-content>
-</ion-pane>
-</body>
+          <img class="title-image" src="img/logo.png" alt="" style="padding:10%;width:100%;"/>
+      </ion-content>
+      <ion-footer-bar class="bar bar-footer bar-assertive">
+        <a href="index.html" style="font-size: 200%;color:white;" class="icon ion-reply-all"></a>
+      </ion-footer-bar>
+  </ion-pane>
+  </body>
 </html>
